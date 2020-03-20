@@ -50,10 +50,10 @@ export default async (req: Request, res: Response) =>{
           result.map((rowUnabledHours) => {
             let dateWithFormat =  moment(rowUnabledHours.date).format('YYYY-MM-DD');
             if (dateWithFormat in dateResponse.unabled_hours) {
-              dateResponse.unabled_hours[dateWithFormat].push(rowUnabledHours.hour_init, rowUnabledHours.hour_end)
+              dateResponse.unabled_hours[dateWithFormat].push([rowUnabledHours.hour_init, rowUnabledHours.hour_end])
             } else {
               dateResponse.unabled_hours[dateWithFormat] = [];
-              dateResponse.unabled_hours[dateWithFormat].push(rowUnabledHours.hour_init, rowUnabledHours.hour_end)
+              dateResponse.unabled_hours[dateWithFormat].push([rowUnabledHours.hour_init, rowUnabledHours.hour_end])
             }
           });
 

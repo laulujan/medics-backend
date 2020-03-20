@@ -1,0 +1,5 @@
+node_modules/*
+src/config/constants.ts
+getData.js
+working_hours.js
+prices.js

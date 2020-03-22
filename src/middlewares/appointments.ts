@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { AppointmentCreateSchema, AppointmentListSchema } from "../models/Appointment";
+import { AppointmentCreateSchema, AppointmentListSchema, AppointmentCancelSchema, AppointmentDeleteSchema } from "../models/Appointment";
 
 export const appointmentValidator = ( req: Request, res: Response, next: NextFunction) => {
   console.log(req.body);
@@ -19,3 +19,20 @@ export const appointmentListValidator = ( req: Request, res: Response, next: Nex
     }
     next();
 }
+export const appointmentCancelValidator = ( req: Request, res: Response, next: NextFunction) => {
+  console.log(req.params);
+    const validation = AppointmentCancelSchema.validate(req.params);
+    if( validation.error){
+        return res.send(400).json(validation.error.details)
+    }
+    next();
+}
+export const appointmentDeleteValidator = ( req: Request, res: Response, next: NextFunction) => {
+  console.log(req.params);
+    const validation = AppointmentDeleteSchema.validate(req.params);
+    if( validation.error){
+        return res.send(400).json(validation.error.details)
+    }
+    next();
+}
+

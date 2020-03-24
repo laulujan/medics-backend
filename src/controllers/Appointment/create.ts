@@ -17,7 +17,7 @@ export default (req: Request, res: Response) =>{
 
     conn.query(insert, function (err, result, fields) {
         if (err) res.status(400).json({});;
-        res.status(200).json({
+        res.status(201).json({
           "status": "ok"
         });
     });

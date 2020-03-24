@@ -11,8 +11,7 @@ export default (req: Request, res: Response) =>{
     sin(radians(lat)))) AS distance FROM doctors  WHERE name LIKE '%${keyword}%' ORDER BY distance ASC LIMIT 12`;
 
     conn.query(endpoint, function (err, result, fields) {
-        if (err) res.status(400).json({});;
-        console.log(result);
+        if (err) res.status(400).json({});
         res.status(200).json(result);
     });
 };

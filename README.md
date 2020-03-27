@@ -5,10 +5,10 @@ To run this project:
 
 ### `npm install`
 
-2.- Import DB dump located in ./medics.sql on your Mysql server. "this dump was inflated for testing purposes".
-3.- Copy src/config/constans.example.ts on src/config/constants.ts and set your database config and express port.
+2.- Import DB dump located in ./medics.sql on your Mysql server. "this dump was inflated for testing purposes". <br />
+3.- Copy src/config/constans.example.ts on src/config/constants.ts and set your database config and express port.<br />
 
 ### `npm run dev`
 
-#### Leave your comments :)
+####  :)
 
